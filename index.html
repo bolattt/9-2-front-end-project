@@ -11,14 +11,32 @@
     <header>
       <nav>
         <h2 class="title">B News</h2>
+
         <ul class="nav-links">
+          <li>
+            <div class="search">
+              <form class="search-form">
+                <input type="text" placeholder="Search News..." />
+                <button>  <img class='magnifying-glass' src="./assets/icons8-magnifying-glass-64.png" alt="magnifying glass"></button>
+              
+              </form>
+            </div>
+          </li>
+
           <li><a href="/">Home</a></li>
-          <li><a href="/">My Topics</a></li>
-          <li><a href="/">Saved News</a></li>
+          <li><a href="./mytopics.html">My Topics</a></li>
+          <li><a href="./savednews.html">Saved News</a></li>
         </ul>
       </nav>
     </header>
-    <h1>My News Project</h1>
+    <main>
+      <aside class="left-aside">Hot Topics</aside>
+      <div class="main-display">
+        <h1 class="title">Headlines</h1>
+
+        <ul class="display-list"></ul>
+      </div>
+    </main>
 
     <script src="./script.js"></script>
   </body>

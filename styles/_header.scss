@@ -1,6 +1,6 @@
 header {
   background: $light-color;
-  padding: 0.8rem 2rem;
+  padding: 0.3rem 2rem;
 
   nav {
     width: 100%;
@@ -11,12 +11,54 @@ header {
 
   .title,
   ul,
-  li,a {
+  li,
+  a {
     display: inline-block;
   }
 
+  .search {
+    form { 
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+    input{ 
+        outline: none;
+        border:none;
+        width: 250px;
+        height: 40px;
+        padding-left: 20px;
+        border-radius: 20px;
+        background-color: $mid-color;
+        margin-right:8px; 
+        transition: 0.5s;
+
+        &:hover {
+            transform: scale(1.03;
+        }
+    }
+
+    button { 
+        outline: none;
+        border:none;
+        background-color: transparent;
+    }
+    .magnifying-glass { 
+        width:2rem;
+        transition: 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+    }
+  }
+  
+
   .title {
-    color: $nav-bg;
+    color: $dark-color;
+
     font-size: 2rem;
     font-weight: 600;
     font-style: italic;
@@ -35,17 +77,15 @@ header {
     color: $dark-color;
     text-decoration: none;
     font-weight: bold;
-    height: 20px;
+    padding-bottom: 5px;
     transition: all 0.5s;
   }
 
-  a:hover{ 
+  a:hover {
     color: $brand-color;
-    font-size: 1.1rem;
-  }
-  
-}
+    // font-size: 1.1rem;
+    transform: scale(1.1);
+    border-bottom: 2px solid $brand-color;
 
-a:hover header{ 
-    padding: 0;
   }
+}

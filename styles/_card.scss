@@ -1,0 +1,24 @@
+.card {
+    height:auto;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color:$mid-color;
+
+
+    img { 
+        width:100%;
+        height: auto;
+        display:block;
+        border-radius: 10px;
+    }
+
+     a { 
+        text-decoration: none;
+     }
+
+     .news-description:hover { 
+        cursor: pointer;
+     }
+}

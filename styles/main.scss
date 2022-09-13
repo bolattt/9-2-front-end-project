@@ -7,9 +7,14 @@ $light-color: #F8FAFC;
 $nav-bg: #18181b;
 $bright-text:#8ec1d6;
 $dev-bg:#0d1218;
+$dev-bright-text-blue:#00d4fe;
 
 
 @import './header';
+@import './layout';
+@import './card';
+@import './mainDisplay';
+
 
 html,body{ 
     box-sizing: border-box;
@@ -21,6 +26,8 @@ html,body{
 body{ 
     background-color: $dev-bg;
     color: $dark-color;
+    height: 100vh;
+    // color:#00d4fe;
 }
 
 

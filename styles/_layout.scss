@@ -1,0 +1,16 @@
+
+main { 
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 100%;
+
+    .main-display,.left-aside { 
+        height: 100%;
+    }
+
+    .display-list {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:40px 30px;
+    }
+}
