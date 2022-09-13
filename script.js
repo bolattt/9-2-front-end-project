@@ -1,4 +1,6 @@
-const BASE = "https://newsapi.org/v2/top-headlines?country=us";
+const cors = "https://cors-anywhere.herokuapp.com/";
+
+const BASE = `${cors}https://newsapi.org/v2/top-headlines?country=us`;
 const header = {
   headers: {
     Authorization: "9a3c6ce90d4b4958a771bfc5370df6b1",
@@ -15,7 +17,7 @@ searchForm.addEventListener("submit", (e) => {
   let keyword = input.value;
   input.value = "";
   keyword = keyword.replaceAll(" ", "%");
-  const url = `https://newsapi.org/v2/everything?q=${keyword}&soryBy=popularity&searchIn=title&pageSize=20`;
+  const url = `${cors}https://newsapi.org/v2/everything?q=${keyword}&soryBy=popularity&searchIn=title&pageSize=20`;
 
   console.log(url);
 
@@ -24,7 +26,10 @@ searchForm.addEventListener("submit", (e) => {
 
 function fetchNews(url, header, keyword = "Headlines") {
   fetch(url, header)
-    .then((res) => res.json())
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
     .then((data) => {
       console.log(data);
       displayNews(data.articles, keyword);
