@@ -15,14 +15,14 @@ searchForm.addEventListener("submit", (e) => {
   let keyword = input.value.trim();
   input.value = "";
   keyword = keyword.replaceAll(" ", "%");
-  const url = `https://newsapi.org/v2/everything?q=${keyword}&soryBy=popularity&searchIn=title&pageSize=20`;
+  const url = `https://newsapi.org/v2/everything?q=${keyword}&soryBy=popularity&searchIn=title&pageSize=21`;
 
   console.log(url);
 
   fetchNews(url, header, keyword);
 });
 
-function fetchNews(url, header, keyword = "Headlines") {
+function fetchNews(url, header, keyword = "HEADLINES") {
   fetch(url, header)
     .then((res) => {
       console.log(res);
@@ -36,13 +36,14 @@ function fetchNews(url, header, keyword = "Headlines") {
 }
 
 function displayNews(articles, newTitle) {
+  displayList.innerHTML = "";
   const title = document.querySelector(".main-display .title");
-  if (newTitle != "Headlines") {
+  if (newTitle != "HEADLINES") {
     title.innerText =
       newTitle
         .split("%")
-        .map((w) => w[0].toUpperCase() + w.slice(1))
-        .join(" ") + " News";
+        .map((w) => w.toUpperCase())
+        .join(" ") + " NEWS";
   }
 
   for (let article of articles) {
@@ -68,6 +69,13 @@ function displayNews(articles, newTitle) {
       displayList.append(li);
     }
   }
+}
+
+function updateMainDisplay(e) {
+  console.log(e.target.textContent);
+  const topic = e.target.textContent.toLowerCase();
+  const url = `https://newsapi.org/v2/everything?q=${topic}&soryBy=popularity&searchIn=title&pageSize=21`;
+  fetchNews(url, header, topic);
 }
 
 fetchNews(BASE, header);
