@@ -130,6 +130,36 @@ main .display-list {
 .main-display .display-list {
   padding: 0;
 }
+.main-display .topics ul {
+  list-style: none;
+  margin-right: 20px;
+}
+.main-display .topics li {
+  display: inline-block;
+  margin-left: 15px;
+  text-transform: uppercase;
+}
+.main-display .topics a {
+  color: #3D4B5F;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 5px;
+  transition: all 0.5s;
+}
+.main-display .topics a:hover {
+  color: #8EC1D6;
+  transform: scale(1.1);
+  border-bottom: 2px solid #8EC1D6;
+}
+.main-display .topics ul {
+  margin: 0 auto;
+  padding: 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 1px;
+}
 
 html, body {
   box-sizing: border-box;

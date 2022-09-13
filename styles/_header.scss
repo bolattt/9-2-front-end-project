@@ -1,3 +1,5 @@
+@import './variables';
+
 header {
   background: $light-color;
   padding: 0.3rem 2rem;
@@ -48,54 +50,54 @@ header {
     // font-size: 1.1rem;
     transform: scale(1.1);
     border-bottom: 2px solid $brand-color;
-
   }
 }
 
-//  Search Input 
+//  Search Input
 
 .search {
-    form { 
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-    input{ 
-        outline: none;
-        border:none;
-        width: 250px;
-        height: 40px;
-        padding-left: 20px;
-        border-radius: 20px;
-        background-color: $mid-color;
-        margin-right:8px; 
-        transition: 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 0.7rem;
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input {
+    outline: none;
+    border: none;
+    width: 250px;
+    height: 40px;
+    padding-left: 20px;
+    border-radius: 20px;
+    background-color: $mid-color;
+    margin-right: 8px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.7rem;
 
-        &:hover {
-            transform: scale(1.05);
-        }
-
-        &:focus { 
-            border:1px solid $brand-color;
-        }
+    &:hover {
+      transform: scale(1.05);
     }
 
-    button { 
-        outline: none;
-        border:none;
-        background-color: transparent;
-        z-index: 1;
-
-        &:hover { 
-            cursor: pointer;
-        }
-
-    }
-    .magnifying-glass { 
-        width:1.8em;
-        margin-left: -75px;
+    &:focus {
+      border: 1px solid $brand-color;
     }
   }
+
+  button {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    z-index: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .magnifying-glass {
+    width: 1.8em;
+    margin-left: -75px;
+  }
+}
+
+

@@ -17,6 +17,61 @@ Took me a few hours to figure out use response.text().
 
 Wanted to do car related project. After searching with VIN, it would show specs, recall info, current market value, and mainteneace by mileage, owner manual  but APIs has very low limits for free tier. 
 
+## Nice to haves 
+
+- add favicon 
+- fix navbar layout 
+- fix gallery css layout using flex box
+- add img hover zoon in effects
+
+## Progress
+
+JS
+
+[x] Fetch and display Headlines upon visting home page
+
+[x] Fetch and display data upon search 
+
+[ ] Save topics to My topics 
+
+[ ] Display news from saved topics 
+
+[ ] Saved News 
+
+[ ] Save to local storage 
+
+[ ] Error handling
+
+[ ] Add logic to topic titles on home page 
+
+--- 
+
+CSS 
+
+[x] Nav links css hover effects 
+
+[x] Color Palette
+
+[x] Overall layout 
+
+[x] Card Design 
+
+[x] search bar design 
+
+[ ] Media Queries 
+
+[ ] Style topic titles on home page 
+
+HTML 
+
+[ ] Add more topic titles to home page 
+
+
+
+
+
+
+
 
 
 

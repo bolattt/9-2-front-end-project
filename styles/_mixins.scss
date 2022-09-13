@@ -1,0 +1,25 @@
+@mixin link-styling { 
+    ul {
+        list-style: none;
+        margin-right: 20px;
+      }
+      li {
+        display: inline-block;
+        margin-left: 15px;
+        text-transform: uppercase;
+      }
+      a {
+        color: $dark-color;
+        text-decoration: none;
+        font-weight: bold;
+        padding-bottom: 5px;
+        transition: all 0.5s;
+      }
+    
+      a:hover {
+        color: $brand-color;
+        // font-size: 1.1rem;
+        transform: scale(1.1);
+        border-bottom: 2px solid $brand-color;
+      }
+}
