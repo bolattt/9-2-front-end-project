@@ -7,6 +7,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    letter-spacing: 1px;
   }
 
   .title,
@@ -68,13 +69,17 @@ header {
         border-radius: 20px;
         background-color: $mid-color;
         margin-right:8px; 
-        transition: 0.5s;
+        transition: 0.3s;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 0.7rem;
 
         &:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
+        }
+
+        &:focus { 
+            border:1px solid $brand-color;
         }
     }
 
@@ -84,10 +89,13 @@ header {
         background-color: transparent;
         z-index: 1;
 
+        &:hover { 
+            cursor: pointer;
+        }
+
     }
     .magnifying-glass { 
         width:1.8em;
         margin-left: -75px;
-        transition: 0.5s;
     }
   }

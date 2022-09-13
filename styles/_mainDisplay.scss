@@ -1,9 +1,14 @@
 .main-display { 
-    padding:20px 30px;
+    padding:20px;
     .title { 
         text-align: center;
         color: $light-color;
         letter-spacing: 2px;
+        margin-bottom:40px;
+    }
+
+    .display-list { 
+        padding:0;
     }
  
 }

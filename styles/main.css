@@ -8,6 +8,7 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  letter-spacing: 1px;
 }
 header .title,
 header ul,
@@ -58,13 +59,16 @@ header a:hover {
   border-radius: 20px;
   background-color: #CBD5E1;
   margin-right: 8px;
-  transition: 0.5s;
+  transition: 0.3s;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 0.7rem;
 }
 .search input:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
+}
+.search input:focus {
+  border: 1px solid #8EC1D6;
 }
 .search button {
   outline: none;
@@ -72,15 +76,16 @@ header a:hover {
   background-color: transparent;
   z-index: 1;
 }
+.search button:hover {
+  cursor: pointer;
+}
 .search .magnifying-glass {
   width: 1.8em;
   margin-left: -75px;
-  transition: 0.5s;
 }
 
 main {
   display: grid;
-  grid-template-columns: 90% 10%;
   height: 100%;
 }
 main .main-display, main .left-aside {
@@ -88,8 +93,8 @@ main .main-display, main .left-aside {
 }
 main .display-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
 }
 
 .card {
@@ -97,7 +102,7 @@ main .display-list {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #CBD5E1;
 }
 .card img {
@@ -114,12 +119,16 @@ main .display-list {
 }
 
 .main-display {
-  padding: 20px 30px;
+  padding: 20px;
 }
 .main-display .title {
   text-align: center;
   color: #F8FAFC;
   letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+.main-display .display-list {
+  padding: 0;
 }
 
 html, body {

@@ -1,7 +1,7 @@
 
 main { 
     display: grid;
-    grid-template-columns: 90% 10%;
+    // grid-template-columns: 90% 10%;
     height: 100%;
 
     .main-display,.left-aside { 
@@ -10,7 +10,7 @@ main {
 
     .display-list {
         display:grid;
-        grid-template-columns: 1fr 1fr;
-        gap:40px 30px;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:30px;
     }
 }

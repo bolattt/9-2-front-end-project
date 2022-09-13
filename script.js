@@ -12,7 +12,7 @@ searchForm.addEventListener("submit", (e) => {
   displayList.innerHTML = "";
 
   const input = document.querySelector(".search-input");
-  let keyword = input.value;
+  let keyword = input.value.trim();
   input.value = "";
   keyword = keyword.replaceAll(" ", "%");
   const url = `https://newsapi.org/v2/everything?q=${keyword}&soryBy=popularity&searchIn=title&pageSize=20`;
