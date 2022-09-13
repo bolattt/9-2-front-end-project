@@ -5,16 +5,43 @@ const header = {
   },
 };
 const displayList = document.querySelector(".display-list");
+const searchForm = document.querySelector(".search-form");
 
-// fetch(BASE, header)
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data);
-//     displayNews(data.articles);
-//   })
-//   .catch((err) => console.log(err));
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  displayList.innerHTML = "";
 
-function displayNews(articles) {
+  const input = document.querySelector(".search-input");
+  let keyword = input.value;
+  input.value = "";
+  keyword = keyword.replaceAll(" ", "%");
+  const url = `https://newsapi.org/v2/everything?q=${keyword}&soryBy=popularity&searchIn=title&pageSize=20`;
+
+  console.log(url);
+
+  fetchNews(url, header, keyword);
+});
+
+function fetchNews(url, header, keyword = "Headlines") {
+  fetch(url, header)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      displayNews(data.articles, keyword);
+    })
+    .catch((err) => console.log(err));
+}
+
+function displayNews(articles, newTitle) {
+  const title = document.querySelector(".main-display .title");
+  if (newTitle != "Headlines") {
+    title.innerText =
+      newTitle
+        .split("%")
+        .map((w) => w[0].toUpperCase() + w.slice(1))
+        .join(" ") + " News";
+  }
+
   for (let article of articles) {
     if (article.urlToImage) {
       const li = document.createElement("li");
@@ -39,3 +66,5 @@ function displayNews(articles) {
     }
   }
 }
+
+fetchNews(BASE, header);

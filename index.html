@@ -16,9 +16,14 @@
           <li>
             <div class="search">
               <form class="search-form">
-                <input type="text" placeholder="Search News..." />
-                <button>  <img class='magnifying-glass' src="./assets/icons8-magnifying-glass-64.png" alt="magnifying glass"></button>
-              
+                <input type="text" class="search-input" placeholder="Search News..." />
+                <button type="submit">
+                  <img
+                    class="magnifying-glass"
+                    src="./assets/icons8-magnifying-glass-64.png"
+                    alt="magnifying glass"
+                  />
+                </button>
               </form>
             </div>
           </li>
@@ -30,12 +35,13 @@
       </nav>
     </header>
     <main>
-      <aside class="left-aside">Hot Topics</aside>
       <div class="main-display">
         <h1 class="title">Headlines</h1>
 
         <ul class="display-list"></ul>
       </div>
+      <aside class="left-aside">Hot Topics</aside>
+
     </main>
 
     <script src="./script.js"></script>

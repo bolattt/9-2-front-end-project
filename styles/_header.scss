@@ -32,9 +32,12 @@ header {
         background-color: $mid-color;
         margin-right:8px; 
         transition: 0.5s;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.7rem;
 
         &:hover {
-            transform: scale(1.03;
+            transform: scale(1.03);
         }
     }
 
@@ -42,16 +45,13 @@ header {
         outline: none;
         border:none;
         background-color: transparent;
+        z-index: 1;
+
     }
     .magnifying-glass { 
-        width:2rem;
+        width:1.8em;
+        margin-left: -75px;
         transition: 0.5s;
-
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-        }
-
     }
   }
   
@@ -72,6 +72,7 @@ header {
   li {
     display: inline-block;
     margin-left: 15px;
+    text-transform: uppercase;
   }
   a {
     color: $dark-color;
