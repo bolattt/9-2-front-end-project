@@ -1,0 +1,51 @@
+header {
+  background: $light-color;
+  padding: 0.8rem 2rem;
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title,
+  ul,
+  li,a {
+    display: inline-block;
+  }
+
+  .title {
+    color: $nav-bg;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin-right: 20px;
+  }
+  li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+  a {
+    color: $dark-color;
+    text-decoration: none;
+    font-weight: bold;
+    height: 20px;
+    transition: all 0.5s;
+  }
+
+  a:hover{ 
+    color: $brand-color;
+    font-size: 1.1rem;
+  }
+  
+}
+
+a:hover header{ 
+    padding: 0;
+  }

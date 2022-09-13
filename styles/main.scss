@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap');
+
+$brand-color: #8EC1D6;
+$dark-color: #3D4B5F;
+$mid-color: #CBD5E1;
+$light-color: #F8FAFC;
+$nav-bg: #18181b;
+$bright-text:#8ec1d6;
+$dev-bg:#0d1218;
+
+
+@import './header';
+
+html,body{ 
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body{ 
+    background-color: $dev-bg;
+    color: $dark-color;
+}
+
+
+

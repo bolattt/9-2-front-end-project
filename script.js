@@ -5,7 +5,13 @@ const header = {
   },
 };
 
-fetch(BASE, header)
-  .then((res) => res.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.log(err));
+// fetch(BASE, header)
+//   .then((res) => res.json())
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+fetch("./db.json")
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => console.log(data));
