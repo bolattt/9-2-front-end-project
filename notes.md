@@ -33,6 +33,12 @@ JS
 
 [x] Fetch and display data upon search 
 
+[x] Deploy Node Server to bypass cors enabled only for local host 
+
+[x] Connect frontend and backend
+
+[x] Make topic titles links work on home page 
+
 [ ] Save topics to My topics 
 
 [ ] Display news from saved topics 
@@ -43,7 +49,6 @@ JS
 
 [ ] Error handling
 
-[ ] Add logic to topic titles on home page 
 
 --- 
 
@@ -62,6 +67,8 @@ CSS
 [ ] Media Queries 
 
 [ ] Style topic titles on home page 
+
+--- 
 
 HTML 
 
