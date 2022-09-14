@@ -6,6 +6,7 @@ const header = {
 };
 const displayList = document.querySelector(".display-list");
 const searchForm = document.querySelector(".search-form");
+const backendURL = "https://backend-for-box-news.onrender.com/";
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -30,7 +31,8 @@ function fetchNews(url, header, keyword = "HEADLINES") {
     })
     .then((data) => {
       console.log(data);
-      displayNews(data.articles, keyword);
+      // displayNews(data.articles, keyword);
+      displayNews(data, keyword);
     })
     .catch((err) => console.log(err));
 }
@@ -78,4 +80,4 @@ function updateMainDisplay(e) {
   fetchNews(url, header, topic);
 }
 
-fetchNews(BASE, header);
+fetchNews(backendURL, header);
