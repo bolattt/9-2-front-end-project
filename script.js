@@ -80,4 +80,4 @@ function updateMainDisplay(e) {
   fetchNews(url, header, topic);
 }
 
-fetchNews(backendURL, header);
+fetchNews(BASE, header);

@@ -1,5 +1,5 @@
 
-## How to hide public api key 
+## How to hide public api key on front end  
 
 Didn't figure that out. 
 
@@ -23,6 +23,8 @@ Wanted to do car related project. After searching with VIN, it would show specs,
 - fix navbar layout 
 - fix gallery css layout using flex box
 - add img hover zoon in effects
+- add loader 
+
 
 ## Progress
 
