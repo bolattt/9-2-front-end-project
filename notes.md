@@ -19,7 +19,6 @@ Wanted to do car related project. After searching with VIN, it would show specs,
 
 ## Nice to haves 
 
-- add favicon 
 - fix navbar layout 
 - fix gallery css layout using flex box
 - add img hover zoon in effects
@@ -66,7 +65,9 @@ CSS
 
 HTML 
 
-[ ] Add more topic titles to home page 
+[x] Add Favicon 
+
+[x] Add more topic titles to home page 
 
 
 
