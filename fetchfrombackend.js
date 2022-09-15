@@ -73,14 +73,15 @@ function updateMainDisplay(e) {
   const topic = e.target.textContent.toLowerCase();
   const url = `https://newsapi.org/v2/everything?q=${topic}&sortBy=popularity&searchIn=title&pageSize=21`;
   fetchNews(`${backendURL}?url=${url}`, topic);
+  hideMenuAfterClick();
 }
 
 // fetchNews(backendURL);
+const topicsList = document.querySelector(".topics-list");
+const ul = document.querySelector(".nav-links");
 
 function toggleMenu() {
-  const ul = document.querySelector(".nav-links");
   const toggle = document.querySelector(".nav-toggle");
-  const topicsList = document.querySelector(".topics-list");
 
   if (ul && toggle) {
     toggle.addEventListener("click", () => {
@@ -91,3 +92,8 @@ function toggleMenu() {
 }
 
 toggleMenu();
+
+function hideMenuAfterClick() {
+  ul.classList.remove("show-menu");
+  topicsList.classList.remove("show-topics");
+}
