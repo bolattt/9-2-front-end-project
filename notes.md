@@ -39,15 +39,18 @@ JS
 
 [x] Make topic titles links work on home page 
 
+[ ] Add Pagination 
+
 [ ] Save topics to My topics 
 
 [ ] Display news from saved topics 
 
-[ ] Saved News 
+[ ] Save News 
 
 [ ] Save to local storage 
 
 [ ] Error handling
+
 
 
 --- 
@@ -64,9 +67,9 @@ CSS
 
 [x] search bar design 
 
-[ ] Media Queries 
+[x] Media Queries 
 
-[ ] Style topic titles on home page 
+[x] Style topic titles on home page 
 
 --- 
 

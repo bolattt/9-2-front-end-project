@@ -1,8 +1,10 @@
 const displayList = document.querySelector(".display-list");
 const searchForm = document.querySelector(".search-form");
-const backendURL = "https://backend-for-box-news.onrender.com/";
-const local = "http://localhost:8080/";
+let backendURL = "https://backend-for-box-news.onrender.com/";
+const local = "http://localhost:8081/";
 const loader = document.querySelector(".loader");
+
+// backendURL = local;
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -12,15 +14,15 @@ searchForm.addEventListener("submit", (e) => {
   let keyword = input.value.trim();
   input.value = "";
   keyword = keyword.replaceAll(" ", "%");
-  const url = `https://newsapi.org/v2/everything?q=${keyword}&sortBy=popularity&searchIn=title&pageSize=21`;
+  // const url = `https://newsapi.org/v2/everything?q=${keyword}&sortBy=popularity&searchIn=title&pageSize=21`;
 
-  console.log(url);
+  // console.log(url);
 
-  fetchNews(`${backendURL}?url=${url}`, keyword);
+  fetchNews(`${backendURL}?keyword=${keyword}`, keyword);
 });
 
 function fetchNews(url, keyword = "HEADLINES") {
-  loader.classList.remove("hide");
+  // loader.classList.remove("hide");
 
   fetch(url)
     .then((res) => {
@@ -77,7 +79,8 @@ function updateMainDisplay(e) {
   console.log(e.target.textContent);
   const topic = e.target.textContent.toLowerCase();
   const url = `https://newsapi.org/v2/everything?q=${topic}&sortBy=popularity&searchIn=title&pageSize=21`;
-  fetchNews(`${backendURL}?url=${url}`, topic);
+  // fetchNews(`${backendURL}?url=${url}`, topic);
+  fetchNews(`${backendURL}?keyword=${topic}`, topic);
   hideMenuAfterClick();
 }
 
