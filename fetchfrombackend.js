@@ -22,7 +22,7 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 function fetchNews(url, keyword = "HEADLINES") {
-  // loader.classList.remove("hide");
+  loader.classList.remove("hide");
 
   fetch(url)
     .then((res) => {
