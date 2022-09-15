@@ -75,4 +75,19 @@ function updateMainDisplay(e) {
   fetchNews(`${backendURL}?url=${url}`, topic);
 }
 
-fetchNews(backendURL);
+// fetchNews(backendURL);
+
+function toggleMenu() {
+  const ul = document.querySelector(".nav-links");
+  const toggle = document.querySelector(".nav-toggle");
+  const topicsList = document.querySelector(".topics-list");
+
+  if (ul && toggle) {
+    toggle.addEventListener("click", () => {
+      ul.classList.toggle("show-menu");
+      topicsList.classList.toggle("show-topics");
+    });
+  }
+}
+
+toggleMenu();

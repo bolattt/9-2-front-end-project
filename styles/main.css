@@ -168,13 +168,71 @@ main .display-list {
   header nav {
     flex-direction: column;
   }
-  header nav ul {
+  header nav .nav-links {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2.5rem 0 0;
+    text-align: center;
+  }
+  header nav .nav-toggle {
+    display: block;
   }
 }
+@media screen and (max-width: 800px) {
+  body {
+    width: 100vw;
+  }
+  main .display-list {
+    grid-template-columns: 1fr;
+  }
+  .main-display .topics .topics-list {
+    display: none;
+  }
+}
+.nav-toggle {
+  display: none;
+  margin: 8px auto;
+  transition: 0.3s;
+}
+.nav-toggle:hover {
+  transform: scale(1.2);
+}
+
+.nav-links.show-menu {
+  top: 22%;
+  transform: translate(0, -10%);
+  background: #F8FAFC;
+  border-radius: 20px;
+  z-index: 1;
+  padding: 20px;
+}
+
+.nav-toggle {
+  cursor: pointer;
+}
+
+.main-display .topics-list.show-topics {
+  display: flex;
+  flex-direction: column;
+  background: #F8FAFC;
+  padding: 20px;
+  border-radius: 20px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.main-display .topics-list.show-topics .topic-item {
+  margin-top: 15px;
+}
+
 html, body {
   box-sizing: border-box;
   margin: 0;
