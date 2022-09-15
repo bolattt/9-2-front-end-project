@@ -2,6 +2,7 @@ const displayList = document.querySelector(".display-list");
 const searchForm = document.querySelector(".search-form");
 const backendURL = "https://backend-for-box-news.onrender.com/";
 const local = "http://localhost:8080/";
+const loader = document.querySelector(".loader");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -19,6 +20,8 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 function fetchNews(url, keyword = "HEADLINES") {
+  loader.classList.remove("hide");
+
   fetch(url)
     .then((res) => {
       console.log(res);
@@ -66,6 +69,8 @@ function displayNews(articles, newTitle) {
       displayList.append(li);
     }
   }
+
+  loader.classList.add("hide");
 }
 
 function updateMainDisplay(e) {
@@ -76,7 +81,6 @@ function updateMainDisplay(e) {
   hideMenuAfterClick();
 }
 
-// fetchNews(backendURL);
 const topicsList = document.querySelector(".topics-list");
 const ul = document.querySelector(".nav-links");
 
@@ -97,3 +101,10 @@ function hideMenuAfterClick() {
   ul.classList.remove("show-menu");
   topicsList.classList.remove("show-topics");
 }
+
+function hideLoader() {
+  const loader = document.querySelector(".loader");
+  loader.classList.toggle("hide");
+}
+
+fetchNews(backendURL);
