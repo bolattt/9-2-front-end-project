@@ -4,7 +4,7 @@ let backendURL = "https://backend-for-box-news.onrender.com/";
 const local = "http://localhost:8081/";
 const loader = document.querySelector(".loader");
 
-// backendURL = local;
+backendURL = local;
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -22,7 +22,7 @@ searchForm.addEventListener("submit", (e) => {
 });
 
 function fetchNews(url, keyword = "HEADLINES") {
-  loader.classList.remove("hide");
+  // loader.classList.remove("hide");
 
   fetch(url)
     .then((res) => {
@@ -72,7 +72,7 @@ function displayNews(articles, newTitle) {
     }
   }
 
-  loader.classList.add("hide");
+  // loader.classList.add("hide");
 }
 
 function updateMainDisplay(e) {
