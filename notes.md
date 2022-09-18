@@ -21,11 +21,10 @@ Wanted to do car related project. After searching with VIN, it would show specs,
 
 - fix navbar layout 
 - fix gallery css layout using flex box
-- add img hover zoon in effects
-- add loader 
-
+- add img hover zoom in effects
 
 ## Progress
+
 
 JS
 
@@ -75,6 +74,8 @@ CSS
 
 [x] Style topic titles on home page 
 
+
+
 --- 
 
 HTML 
@@ -88,7 +89,7 @@ HTML
 
 ISSUES 
 
-[ ] Clicking on Home or Header Logo doesn't repaint the dom with default Headlines
+[x] Clicking on Home or Header Logo doesn't repaint the dom with default Headlines
 
 
 

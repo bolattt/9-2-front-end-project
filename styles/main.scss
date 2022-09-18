@@ -22,9 +22,11 @@ html,body{
 body{ 
     background-color: $dev-bg;
     color: $dark-color;
-    height: 100vh;
+    min-height: 100vh;
     // color:#00d4fe;
 }
+
+
 
 
 
