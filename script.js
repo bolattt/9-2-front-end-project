@@ -40,6 +40,8 @@ function fetchNews(url, header, keyword = "HEADLINES") {
 function displayNews(articles, newTitle) {
   displayList.innerHTML = "";
   const title = document.querySelector(".main-display .title");
+
+  // create dynamic headline
   if (newTitle != "HEADLINES") {
     title.innerText =
       newTitle
@@ -48,6 +50,7 @@ function displayNews(articles, newTitle) {
         .join(" ") + " NEWS";
   }
 
+  // inject articles to DOM
   for (let article of articles) {
     if (article.urlToImage) {
       const li = document.createElement("li");
@@ -71,6 +74,11 @@ function displayNews(articles, newTitle) {
       displayList.append(li);
     }
   }
+}
+
+function goToHomePage() {
+  displayList.innerHTML = "";
+  fetchNews(BASE, header);
 }
 
 function updateMainDisplay(e) {
