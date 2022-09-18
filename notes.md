@@ -39,6 +39,10 @@ JS
 
 [x] Make topic titles links work on home page 
 
+[ ] Error handling
+
+[ ] Input Validation
+
 [ ] Add Pagination 
 
 [ ] Save topics to My topics 
@@ -49,7 +53,7 @@ JS
 
 [ ] Save to local storage 
 
-[ ] Error handling
+
 
 
 
@@ -78,6 +82,13 @@ HTML
 [x] Add Favicon 
 
 [x] Add more topic titles to home page 
+
+
+--- 
+
+ISSUES 
+
+[ ] Clicking on Home or Header Logo doesn't repaint the dom with default Headlines
 
 
 
