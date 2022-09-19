@@ -12,12 +12,7 @@ searchForm.addEventListener("submit", (e) => {
   const input = document.querySelector(".search-input");
   let keyword = input.value.trim();
   input.value = "";
-  // keyword = keyword.replaceAll(" ", "%");
   console.log(keyword);
-  // const url = `https://newsapi.org/v2/everything?q=${keyword}&sortBy=popularity&searchIn=title&pageSize=21`;
-
-  // console.log(url);
-
   fetchNews(`${backendURL}?keyword=${keyword}`, keyword);
 });
 
@@ -32,10 +27,11 @@ function fetchNews(url, keyword = "HEADLINES") {
     })
     .then((data) => {
       console.log(data);
-      // displayNews(data.articles, keyword);
       displayNews(data, keyword);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 function displayNews(articles, newTitle) {
@@ -81,8 +77,6 @@ function displayNews(articles, newTitle) {
 function updateMainDisplay(e) {
   console.log(e.target.textContent);
   const topic = e.target.textContent.toLowerCase();
-  const url = `https://newsapi.org/v2/everything?q=${topic}&sortBy=popularity&searchIn=title&pageSize=21`;
-  // fetchNews(`${backendURL}?url=${url}`, topic);
   fetchNews(`${backendURL}?keyword=${topic}`, topic);
   hideMenuAfterClick();
 }
@@ -105,6 +99,7 @@ function toggleMenu() {
 
 toggleMenu();
 
+// hide menu on small screens after click
 function hideMenuAfterClick() {
   ul.classList.remove("show-menu");
   topicsList.classList.remove("show-topics");
@@ -116,8 +111,3 @@ function hideLoader() {
 }
 
 fetchNews(backendURL);
-
-function goToHomePage() {
-  displayList.innerHTML = "";
-  fetchNews(backendURL);
-}
