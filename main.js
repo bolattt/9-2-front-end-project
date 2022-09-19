@@ -3,6 +3,7 @@ let backendURL = "https://backend-for-box-news.onrender.com/";
 const local = "http://localhost:8081/";
 const loader = document.querySelector(".loader");
 const displayList = document.querySelector(".display-list");
+const title = document.querySelector(".main-display .title");
 
 // backendURL = local;
 
@@ -23,20 +24,32 @@ function fetchNews(url, keyword = "HEADLINES") {
   fetch(url)
     .then((res) => {
       console.log(res);
+      if (!res.ok) {
+        throw new Error(res.statusText);
+      }
       return res.json();
     })
     .then((data) => {
       console.log(data);
-      displayNews(data, keyword);
+      if (data.length == 0) {
+        displayList.innerHTML = "";
+        console.log("insded data.length");
+        title.innerText = "NO NEWS FOUND!";
+        loader.classList.add("hide");
+      } else {
+        displayNews(data, keyword);
+      }
     })
     .catch((err) => {
       console.log(err);
+      loader.classList.add("hide");
+      title.innerText = err.message;
     });
 }
 
 function displayNews(articles, newTitle) {
   displayList.innerHTML = "";
-  const title = document.querySelector(".main-display .title");
+  // const title = document.querySelector(".main-display .title");
   if (newTitle != "HEADLINES") {
     title.innerText =
       newTitle
