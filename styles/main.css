@@ -110,6 +110,10 @@ main .display-list {
   height: auto;
   display: block;
   border-radius: 10px;
+  transition: 0.3s;
+}
+.card img:hover {
+  transform: scale(1.1);
 }
 .card a {
   text-decoration: none;
