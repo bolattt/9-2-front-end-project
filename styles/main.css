@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;1,600&family=Source+Serif+Pro&display=swap");
 header {
   background: #F8FAFC;
   padding: 0.3rem 2rem;
@@ -234,6 +234,7 @@ main .display-list {
   position: fixed;
   left: 50%;
   transform: translate(-50%, 0);
+  z-index: 100;
 }
 .main-display .topics-list.show-topics .topic-item {
   margin-top: 15px;
@@ -288,6 +289,52 @@ button:hover svg {
 
 button:hover span {
   transform: translateX(7px);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 90%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px 60px;
+  border: 1px solid #888;
+  width: 80%;
+  font-family: "Source Serif Pro", serif;
+  line-height: 1.8;
+  word-spacing: 0.5em;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+}
+.modal-content p {
+  margin-top: 25px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 html, body {

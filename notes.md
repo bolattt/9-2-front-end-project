@@ -38,9 +38,9 @@ JS
 
 [x] Make topic titles links work on home page 
 
-[ ] Error handling
+[x] Error handling
 
-[ ] Input Validation
+[x] Input Validation
 
 [ ] Add Pagination 
 
@@ -51,10 +51,6 @@ JS
 [ ] Save News 
 
 [ ] Save to local storage 
-
-
-
-
 
 --- 
 
@@ -73,7 +69,6 @@ CSS
 [x] Media Queries 
 
 [x] Style topic titles on home page 
-
 
 
 --- 

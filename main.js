@@ -68,14 +68,23 @@ function displayNews(articles, newTitle) {
       const p = document.createElement("p");
 
       img.src = article.urlToImage;
-      a.href = article.url;
       a.append(img);
-      a.setAttribute("target", "_blank");
+      // if url includes youtube open in a new tab
+      if (article.url.includes("www.youtube.com")) {
+        a.href = article.url;
+        a.setAttribute("target", "_blank");
+      }
+      // if it doesn't, show the article on page
+      else {
+        a.href = "#";
+        a.setAttribute("data-article-url", article.url);
+        li.addEventListener("click", () => {
+          showArticle(article.url, article.urlToImage);
+        });
+      }
       p.textContent = article.title;
       p.classList.add("news-description");
-      p.addEventListener("click", () => {
-        window.open(article.url, "_blank");
-      });
+
       li.classList.add("card");
       li.append(a);
       li.append(p);
@@ -124,3 +133,44 @@ function hideLoader() {
 }
 
 fetchNews(backendURL);
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+function showArticle(articleUrl, imgUrl) {
+  const endPoint = backendURL + `details?url=${articleUrl}`;
+  // go to server end point
+  fetch(endPoint)
+    .then((res) => res.json())
+    .then((data) => {
+      console.dir(data);
+
+      const modelContnet = document.querySelector(".modal-content");
+      const modal = document.querySelector("#myModal");
+      modelContnet.innerHTML = data;
+      modal.style.display = "block";
+    });
+}
