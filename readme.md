@@ -1,6 +1,6 @@
 # Box News 
 
-It's a news website using [news api](https://newsapi.org/). 
+It's a responsive news website using [news api](https://newsapi.org/). 
 
 It displays top headlines upon visiting the home page. 
 
@@ -21,6 +21,13 @@ Please be patient when visiting the page for the first time.
 Backend server takes a while to wake up. 
 
 --- 
+
+Added the feature to read the news details on the page instead of going to the source on a new tab. 
+
+On the server side,  Axios is used to get html of the news, JSDOM to create dom tree and Mozilla Readability to get the content. 
+
+
+
 
 
 [Live Demo](https://bolattt.github.io/9-2-front-end-project/)
