@@ -162,15 +162,16 @@ window.onclick = function (event) {
 
 function showArticle(articleUrl, imgUrl) {
   const endPoint = backendURL + `details?url=${articleUrl}`;
+  loader.classList.remove("hide");
   // go to server end point
   fetch(endPoint)
     .then((res) => res.json())
     .then((data) => {
-      console.dir(data);
-
+      console.log(data);
       const modelContnet = document.querySelector(".modal-content");
       const modal = document.querySelector("#myModal");
       modelContnet.innerHTML = data;
+      loader.classList.add("hide");
       modal.style.display = "block";
     });
 }
