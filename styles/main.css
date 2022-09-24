@@ -317,9 +317,16 @@ button:hover span {
   word-spacing: 0.5em;
   font-size: 1.3rem;
   box-sizing: border-box;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 .modal-content p {
   margin-top: 25px;
+}
+.modal-content img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* The Close Button */
@@ -342,6 +349,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {

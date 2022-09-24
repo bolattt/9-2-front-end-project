@@ -24,8 +24,15 @@
     word-spacing: 0.5em;
     font-size: 1.3rem;
     box-sizing: border-box;
+    border-radius: 10px;
+    margin-bottom:30px;
     p { 
       margin-top:25px;
+    }
+    img {
+      display: block;
+      width:100%;
+      height:auto;
     }
   }
   
