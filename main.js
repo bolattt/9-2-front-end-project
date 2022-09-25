@@ -4,6 +4,8 @@ const local = "http://localhost:8081/";
 const loader = document.querySelector(".loader");
 const displayList = document.querySelector(".display-list");
 const title = document.querySelector(".main-display .title");
+const modalContent = document.querySelector(".modal-content");
+const modal = document.querySelector("#myModal");
 
 // backendURL = local;
 
@@ -76,11 +78,24 @@ function displayNews(articles, newTitle) {
       }
       // if it doesn't, show the article on page
       else {
-        a.href = "#";
-        a.setAttribute("data-article-url", article.url);
-        li.addEventListener("click", () => {
-          showArticle(article.url, article.urlToImage);
-        });
+        // if there is content, show content
+        if (article.content) {
+          li.addEventListener("click", () => {
+            modalContent.innerHTML = `
+            <img src=${article.urlToImage} />
+            <p>${article.content}</p>
+            `;
+            modal.style.display = "block";
+          });
+        }
+        // if there is no content, go to server endpoint, server will fetch,parse and send json
+        else {
+          a.href = "#";
+          a.setAttribute("data-article-url", article.url);
+          li.addEventListener("click", () => {
+            showArticle(article.url, article.urlToImage);
+          });
+        }
       }
       p.textContent = article.title;
       p.classList.add("news-description");
@@ -135,7 +150,6 @@ function hideLoader() {
 fetchNews(backendURL);
 
 // Get the modal
-var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -168,9 +182,9 @@ function showArticle(articleUrl, imgUrl) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      const modelContnet = document.querySelector(".modal-content");
-      const modal = document.querySelector("#myModal");
-      modelContnet.innerHTML = data;
+      // const modelContnet = document.querySelector(".modal-content");
+      // const modal = document.querySelector("#myModal");
+      modalContent.innerHTML = data;
       loader.classList.add("hide");
       modal.style.display = "block";
     });
