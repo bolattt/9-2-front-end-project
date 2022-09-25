@@ -4,6 +4,7 @@ const local = "http://localhost:8081/";
 const loader = document.querySelector(".loader");
 const displayList = document.querySelector(".display-list");
 const title = document.querySelector(".main-display .title");
+const pagination = document.querySelector(".pagination");
 
 // backendURL = local;
 
