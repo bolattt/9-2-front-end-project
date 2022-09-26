@@ -78,24 +78,12 @@ function displayNews(articles, newTitle) {
       }
       // if it doesn't, show the article on page
       else {
-        // if there is content, show content
-        if (article.content) {
-          li.addEventListener("click", () => {
-            modalContent.innerHTML = `
-            <img src=${article.urlToImage} />
-            <p>${article.content}</p>
-            `;
-            modal.style.display = "block";
-          });
-        }
-        // if there is no content, go to server endpoint, server will fetch,parse and send json
-        else {
-          a.href = "#";
-          a.setAttribute("data-article-url", article.url);
-          li.addEventListener("click", () => {
-            showArticle(article.url, article.urlToImage);
-          });
-        }
+        //  go to server endpoint, server will fetch,parse and send json
+        a.href = "#";
+        a.setAttribute("data-article-url", article.url);
+        li.addEventListener("click", () => {
+          showArticle(article.url, article.urlToImage);
+        });
       }
       p.textContent = article.title;
       p.classList.add("news-description");
