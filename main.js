@@ -173,6 +173,10 @@ function showArticle(articleUrl, imgUrl) {
       // const modelContnet = document.querySelector(".modal-content");
       // const modal = document.querySelector("#myModal");
       modalContent.innerHTML = data;
+      if (!modalContent.innerHTML.includes("<img src=")) {
+        modalContent.innerHTML =
+          `<img src=${imgUrl} />` + modalContent.innerHTML;
+      }
       loader.classList.add("hide");
       modal.style.display = "block";
     });
