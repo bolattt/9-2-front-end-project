@@ -256,41 +256,6 @@ main .display-list {
   display: none;
 }
 
-/* From uiverse.io by @adamgiebl */
-.pagination button {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  font-family: inherit;
-  font-weight: 500;
-  font-size: 17px;
-  padding: 0.8em 1.3em 0.8em 0.9em;
-  color: white;
-  background: #ad5389;
-  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
-  border: none;
-  letter-spacing: 0.05em;
-  border-radius: 16px;
-}
-
-button svg {
-  margin-right: 3px;
-  transform: rotate(30deg);
-  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-button span {
-  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-}
-
-button:hover svg {
-  transform: translateX(5px) rotate(90deg);
-}
-
-button:hover span {
-  transform: translateX(7px);
-}
-
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -318,7 +283,7 @@ button:hover span {
   font-size: 1.3rem;
   box-sizing: border-box;
   border-radius: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .modal-content p {
   margin-top: 25px;
@@ -342,6 +307,35 @@ button:hover span {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  /* From uiverse.io by @alexroumi */
+}
+.pagination button {
+  margin-right: 15px;
+  padding: 10px 15px;
+  border: unset;
+  border-radius: 15px;
+  color: #212121;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms;
+  overflow: hidden;
+  cursor: pointer;
+}
+.pagination button:hover {
+  transform: scale(1.1);
+}
+.pagination button:hover::before {
+  width: 100%;
 }
 
 html, body {

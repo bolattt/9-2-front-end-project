@@ -42,6 +42,8 @@ JS
 
 [x] Input Validation
 
+[x] Show news details on the page
+
 [ ] Add Pagination 
 
 [ ] Save topics to My topics 
@@ -85,15 +87,3 @@ HTML
 ISSUES 
 
 [x] Clicking on Home or Header Logo doesn't repaint the dom with default Headlines
-
-
-
-
-
-
-
-
-
-
-
-
