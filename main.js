@@ -6,6 +6,9 @@ const displayList = document.querySelector(".display-list");
 const title = document.querySelector(".main-display .title");
 const pagination = document.querySelector(".pagination");
 
+const modalContent = document.querySelector(".modal-content");
+const modal = document.querySelector("#myModal");
+
 // backendURL = local;
 
 searchForm.addEventListener("submit", (e) => {
@@ -86,6 +89,7 @@ function displayNews(articles, newTitle) {
       }
       // if it doesn't, show the article on page
       else {
+        //  go to server endpoint, server will fetch,parse and send json
         a.href = "#";
         a.setAttribute("data-article-url", article.url);
         li.addEventListener("click", () => {
@@ -147,7 +151,6 @@ function hideLoader() {
 fetchNews(backendURL);
 
 // Get the modal
-var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -180,9 +183,13 @@ function showArticle(articleUrl, imgUrl) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      const modelContnet = document.querySelector(".modal-content");
-      const modal = document.querySelector("#myModal");
-      modelContnet.innerHTML = data;
+      // const modelContnet = document.querySelector(".modal-content");
+      // const modal = document.querySelector("#myModal");
+      modalContent.innerHTML = data;
+      if (!modalContent.innerHTML.includes("<img src=")) {
+        modalContent.innerHTML =
+          `<img src=${imgUrl} />` + modalContent.innerHTML;
+      }
       loader.classList.add("hide");
       modal.style.display = "block";
     });
