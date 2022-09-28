@@ -329,6 +329,7 @@ main .display-list {
   box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
   transition: all 250ms;
   overflow: hidden;
+  cursor: pointer;
 }
 .pagination button:hover {
   transform: scale(1.1);

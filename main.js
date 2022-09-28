@@ -10,7 +10,7 @@ const pagination = document.querySelector(".pagination");
 
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
+  currentPage = 1;
   const input = document.querySelector(".search-input");
   let keyword = input.value.trim();
   input.value = "";
@@ -18,9 +18,13 @@ searchForm.addEventListener("submit", (e) => {
   fetchNews(`${backendURL}?keyword=${keyword}`, keyword);
 });
 
-function fetchNews(url, keyword = "HEADLINES") {
+function fetchNews(url, keyword = "HEADLINES", resetCurPage = false) {
   console.log(url);
+  if (resetCurPage) {
+    currentPage = 1;
+  }
   loader.classList.remove("hide");
+  pagination.style.display = "none";
 
   fetch(url)
     .then((res) => {
@@ -34,7 +38,6 @@ function fetchNews(url, keyword = "HEADLINES") {
       console.log(data);
       if (data.length == 0) {
         displayList.innerHTML = "";
-        console.log("insded data.length");
         title.innerText = "NO NEWS FOUND!";
         loader.classList.add("hide");
       } else {
@@ -49,6 +52,12 @@ function fetchNews(url, keyword = "HEADLINES") {
 }
 
 function displayNews(articles, newTitle) {
+  if (currentPage == 1) {
+    prev.style.visibility = "hidden";
+  } else {
+    prev.style.visibility = "";
+  }
+
   displayList.innerHTML = "";
   // const title = document.querySelector(".main-display .title");
   if (newTitle != "HEADLINES") {
@@ -95,11 +104,13 @@ function displayNews(articles, newTitle) {
   }
 
   loader.classList.add("hide");
+  pagination.style.display = "flex";
 }
 
 function updateMainDisplay(e) {
   console.log(e.target.textContent);
   const topic = e.target.textContent.toLowerCase();
+  currentPage = 1;
   fetchNews(`${backendURL}?keyword=${topic}`, topic);
   hideMenuAfterClick();
 }

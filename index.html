@@ -40,7 +40,7 @@
           </li>
 
           <li>
-            <a href="#" onclick="fetchNews(backendURL)">Home</a>
+            <a href="#" onclick="fetchNews(backendURL,null,true)">Home</a>
           </li>
           <li><a href="./mytopics.html">My Topics</a></li>
           <li><a href="./savednews.html">Saved News</a></li>
@@ -92,11 +92,12 @@
         <ul class="display-list"></ul>
 
       </div>
-      <div class="pagination hide">
+      <div class="pagination">
         <button id="prev">&lt;</button>
         <button id="next">&gt;</button>
       </div>
     </main>
     <script src="./main.js"></script>
+    <script src="./pagination.js"></script>
   </body>
 </html>
